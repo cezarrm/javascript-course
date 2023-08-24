@@ -22,17 +22,21 @@
     <p>Aqui vai o resultado</p>
 
     <p> Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
 
 
     <script>
         var corpo = window.document.body
         var p1 = window.document.getElementsByTagName('p')[1]
        // window.document.write("Está Escrito assim: " + p1.innerText)
+        //var d = window.document.getElementById('msg')
+       // d.style.background = 'green'
+        //d.innerText = "Estou aguardando..."
+        // window.document.getElementById('msg').innerText = "Corrigido"
 
-       corpo.style.background = "Black"
-
-       p1.style.color = 'blue'
+        var d = window.document.querySelector('div#msg') //pratico para alterações rapidas
+        d.style.color = 'yellow'
+        d.style.background = 'blue'
 
     </script>
 
