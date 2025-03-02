@@ -8,10 +8,26 @@ function Calculator () {
     
     this.Start =() => {
 
-        this.ClickButton()
+        this.ClickButton();
+        this.pressEnter();
         
     }
     
+
+    this.pressEnter = () => {
+
+        document.addEventListener('keyup', (e) => {
+
+            if (e.key == 'Enter') {
+
+                this.makeCount();
+            }
+
+
+        })
+
+
+    }
     
     this.ClickButton = () => { 
 
@@ -51,7 +67,8 @@ function Calculator () {
 
             }
 
-            this.display.value = String(count)
+            this.display.value = String(count) //retorna valor da conta como string
+
         } catch(e){
 
             alert('Conta Inválida!')
