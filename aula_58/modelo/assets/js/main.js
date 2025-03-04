@@ -35,7 +35,7 @@ function Calculator () {
             const el = e.target;
             
            if(el.classList.contains('btn-num')) {
-                this.addDisplay(el.innerText);
+                this.addDisplay(el.inner    Text);
            }
            
            if(el.classList.contains('btn-clear')) {
