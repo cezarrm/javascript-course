@@ -1,0 +1,15 @@
+//funções recursivas
+
+//função que se chama (ela se chama de volta)
+//similar a estruturas de repetição for e while
+
+function recursiva(max) { //existe um limite (ex 1000 recursividade nav trava a rec.)
+    console.log(max);
+
+    if (max >= 10000) return;
+    max++;    
+    
+    recursiva(max);
+}
+
+recursiva(0);
