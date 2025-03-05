@@ -26,14 +26,14 @@ const pessoas = [
   { nome: 'Letícia', idade: 19},
   { nome: 'Rosana', idade: 32},
   { nome: 'Wallace', idade: 47},
-]
+];
 
-const bigNames = pessoas.filter(value => value.nome.length >= 5);
+const bigNames = pessoas.filter(value => value.nome.length >= 6);
 const oldPeople = pessoas.filter(value => value.idade > 50);
-const endWithA = pessoas.filter(value => value.nome.endsWith('a'))
+const endWithA = pessoas.filter(value => value.nome.endsWith('a'));
 
 
-console.log(endWithA)
+console.log(bigNames, oldPeople, endWithA)
 
 
 /* método old
