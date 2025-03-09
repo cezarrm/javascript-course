@@ -8,7 +8,7 @@ const produtos = [
 
 ]
 
-const moreExpensive = produtos.filter(value => Number(value.preco) > 100) 
+const moreExpensive = produtos.filter(product => product.preco > 100) 
 
 
 
