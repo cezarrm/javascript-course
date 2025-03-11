@@ -49,7 +49,7 @@ for (let chave in pessoa1) { //vai ver todas as chaves
 
 //criar molde que cria os objetos; factory functions / constructor functions (padrões de projeto) / classes (sintaxe sugar)
 
-function criaPessoa(nome, sobrenome) {
+/*function criaPessoa(nome, sobrenome) {
     return {
         nome,
         sobrenome,
@@ -66,4 +66,23 @@ function criaPessoa(nome, sobrenome) {
 }
 const p1 = criaPessoa('Cezar', 'Miranda');
 
-console.log(p1.nomeCompleto);
+console.log(p1.nomeCompleto);*/
+
+function Pessoa(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+
+    Object.freeze(this) //congela objeto
+}; 
+// palavra new cria objeto vazio {}, atrela a palavra this dentro dessa função ao objeto; e retorna o this;
+
+const p1 = new Pessoa ('Cezar','Miranda')
+//Object.freeze(p1); //travo um objeto aqui; não vai altear o objeto
+
+const p2 = new Pessoa ('Maria','Joana')
+//varialvel aponta pra endereço -> endereço mémória aponta para  -> valor
+p1.nome = 'Outra coisa' //não altera o valor da consta, mas sim o valor do valor da const;
+console.log(p1)
+console.log(p2)
+
+
