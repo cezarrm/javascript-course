@@ -50,6 +50,6 @@ console.log(p1.estoque());*/
 /*console.log(Object.keys(p1)) //chaves enumerable, mostra as chaves que estão enumerable;
 for(let chave in p1) {
     console.log(chave)
-
-} */
+*/
+} 
 
