@@ -58,7 +58,8 @@ productA.aumenta(10)
 productB.aumenta(10)
 
 
-const productC = Object.create(Produto.prototype, {
+const productC = Object.create(Produto.prototype, { //cria um novo objeto e herda do protótipo APENAS os métodos não as propriedades
+    //são adicionados no objeto duas propriedades (preco e tamanho)
     preco: {
         writable: true,
         configurable: true,
@@ -70,7 +71,7 @@ const productC = Object.create(Produto.prototype, {
         configurable: true,
         enumerable: true,
         value: 43
-    },
+    }
 
 });
 
