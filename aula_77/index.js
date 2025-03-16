@@ -23,31 +23,40 @@ let cpfLimpo = cpf.replace(/\D+/g, '');
 let cpfArray = convertArray(Array.from(cpfLimpo));
 let novaArray = testCpf(cpfArray)
 
+
+
 function testCpf (cpf) {
 
-    
-    
-    let arrayMulti = multiplicaArray(cpf)
     let arreyInit = splitArray(cpf, 9)
+    let arrayMulti = multiplicaArray(arreyInit)
     let soma = somaArray(arrayMulti);
     let digit = createDigit(soma);
-    let novaArray = adicionaDigito(digit, arreyInit);
-
+    let arreyParcial = adicionaDigito(digit, arreyInit);
+    let arreyFinal = criaSegundoDigito(arreyParcial);
     
-
-    return novaArray;
+    return arreyFinal
+      
 
 }
 
-function checkCPF (array1, array2) {
 
-    if (array1.length ==! array2.length) {
+function validaCPF(cpf, cpf2) {
+    if (cpf.join('') === cpf2.join('')) {
+        return 'CPF Válido';
+    } else {
+        return 'CPF Inválido';
+    }
+}
 
-        testCpf(array1);
 
-    } 
+function criaSegundoDigito (array) {
 
-    return array1;
+    let arrayMulti = multiplicaArray(array)
+    let soma = somaArray(arrayMulti);
+    let digit = createDigit(soma);
+    let novaArray = adicionaDigito(digit, array);
+
+return novaArray;
 
 }
 
@@ -78,25 +87,18 @@ function somaArray(array) {
 
 function multiplicaArray(array) {
 
-    let multiplicador = 10;
+    let multiplicador = array.length + 1;
     let arrayMultiplicada = [];
-    if (array.length <= 9) {
-        for (let i = 0; i < arraySplited.length; i++) {
-        let valor = Number(arraySplited[i]);
+   
+        for (let i = 0; i < array.length; i++) {
+        let valor = Number(array[i]);
         valor = valor * (multiplicador);   
         arrayMultiplicada.push(valor)
         multiplicador--
         }
-    } else if (array.length == 10) { 
+    
          
-        for (let i = 0; i < arraySplited.length; i++) {
-            let valor = Number(arraySplited[i]);
-            valor = valor * (multiplicador);   
-            arrayMultiplicada.push(valor)
-            multiplicador--
-            }
-
-    }
+       
       return arrayMultiplicada;
 }
 
@@ -137,5 +139,5 @@ function convertArray(array) {
 }
 
 
-console.log(novaArray)
 
+console.log(validaCPF(cpfArray, novaArray))
