@@ -26,6 +26,7 @@ Pessoa.prototype.nomeCompleto = function () {
 
 }
 
+//primeiro pessoa1 -> pessoa.prototype -> object.prototype (cadeia de busca)
 
 const pessoa1 = new Pessoa ('Cezar', 'Miranda'); //Pessoa = função construtora
 const pessoa2 = new Pessoa ('Maria','Miranda'); 

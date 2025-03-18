@@ -73,8 +73,8 @@ const produto = new Produto ('Generico', 10)
 const camiseta = new Camiseta('Regata', 7.6,'Preto')
 const caneca = new Caneca('Caneca Naruto', 10.50, 'Porcelana', 200)
 
-caneca.estoque = 100;
+caneca.estoque = 100; //aqui getter
 
-console.log(caneca.estoque);
+console.log(caneca.estoque); //aqui setter
 console.log(camiseta);
 console.log(produto);
