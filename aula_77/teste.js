@@ -54,4 +54,9 @@ ValidaCPF.prototype.isSequecia = function () {
 
 
 const cpf = new ValidaCPF ('070.987.720-03');
-console.log(cpf.valida())
+
+if(cpf.valida()) {
+    console.log('CPF Válido!')
+} else {
+   console.log('CPF Inválido!')
+}
