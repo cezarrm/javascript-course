@@ -18,7 +18,7 @@ Adiciona o novo número no final da string.
 
 */
 
-let cpf = '705.484.450-52';
+let cpf = '111.111.111-';
 let cpfLimpo = cpf.replace(/\D+/g, '');
 let cpfArray = convertArray(Array.from(cpfLimpo));
 let novaArray = testCpf(cpfArray)
@@ -107,13 +107,11 @@ function multiplicaArray(array) {
 function adicionaDigito(valor, array) {
    
     if(valor >= 10) {
-       
+      
         array.push(0)
- 
+
     } else {
-
         array.push(valor);
-
     }
 
     array = convertArray(array);
