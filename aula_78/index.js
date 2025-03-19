@@ -23,6 +23,7 @@ Conta.prototype.sacar = function (valor) {
 
 Conta.prototype.depositar = function (valor) {
     this.saldo += valor;
+    this.verSaldo();
 };
 Conta.prototype.verSaldo = function () {
     console.log(`Ag/c: ${this.agencia}/${this.conta} |` + ` Saldo: R$${this.saldo.toFixed(2)}`)
@@ -36,7 +37,7 @@ function ContaCorrente(agencia, conta, saldo, limite) {
 
 }
 
-ContaCorrente.prototype = Object.create(Conta.prototype);
+ContaCorrente.prototype = Object.create(Conta.prototype); //conta filha;
 ContaCorrente.prototype.constructor = ContaCorrente;
 
 ContaCorrente.prototype.sacar = function (valor) {
@@ -45,12 +46,32 @@ ContaCorrente.prototype.sacar = function (valor) {
         
         return;
     }    
+
     this.saldo -= valor;
     this.verSaldo();
 };
+
+function ContaPoupanca(agencia, conta, saldo) {
+
+    Conta.call(this, agencia, conta, saldo);
+   }
+
+ContaPoupanca.prototype = Object.create(Conta.prototype); //conta filha;
+ContaPoupanca.prototype.constructor = ContaPoupanca;
+
+
+
 
 
 const contaCorrete1 = new ContaCorrente(11, 22, 0, 100);
 
 contaCorrete1.depositar(10);
+contaCorrete1.sacar(110);
+contaCorrete1.sacar(1);
 
+console.log();
+
+const contaPoupanca1 = new ContaPoupanca(12, 33, 0);
+contaPoupanca1.depositar(10);
+contaPoupanca1.sacar(10);
+contaPoupanca1.sacar(1);
