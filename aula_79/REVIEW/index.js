@@ -59,9 +59,11 @@ const Livro = {
 
      const conta = (function () {
 
-        
-        let saldo = 200000; //saldo
+        //Se você deseja controlar o acesso ao saldo de forma privada, o correto seria usar closures ou getters e setters.
 
+        let saldo = 200000; //saldo -> 
+        //saldo encapsulado dentro do closure, não pode ser acessado diretamente de fora do objeto;
+        
         return { 
             numero: 2,
             agencia: 3,
