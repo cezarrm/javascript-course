@@ -87,7 +87,7 @@ Polimorfismo permite que métodos compartilhem o mesmo nome, mas tenham comporta
 Exercício:
 
 Crie uma classe Instrumento com um método tocar() e uma classe Violao que sobrescreve esse método.
-*/
+
 
 function Instrumento (nome) {
 
@@ -125,7 +125,7 @@ const violao = new Violao ('Violao','Essa tal liberdade','Só pra contrariar')
 
 
 console.log(violao.tocar())
-
+*/
 /*
 Factory Functions + Prototypes
 
@@ -136,6 +136,20 @@ Exercício:
 Crie uma Factory Function criarProduto que retorna um objeto com nome e preço.
 */ 
 
+function criaProduto (nome, preco) {
+    return {
+    
+        nome,
+        preco,    
+        checarProduto () {
+            console.log(`O valor do ${this.nome} é R$ ${this.preco.toFixed(2)}`);
+    }
+    }
+   
+}
+
+const p1 = criaProduto('carro', 50000)
+p1.checarProduto()
 /*
 Objeto Map()
 
