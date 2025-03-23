@@ -8,7 +8,7 @@ class Pessoa {
         this.sobrenome = sobrenome;
     }
 
-    falar() { //métodos dentro da classe;
+    falar() { //métodos dentro da classe que vão direto para o proto;
         console.log(`${this.nome} está falando.`);
 
     }
