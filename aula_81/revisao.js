@@ -47,32 +47,48 @@
 
 // Crie uma instância da classe e teste seus métodos.
 
-// class ContaBancaria { 
+const _saldo = Symbol('Saldo')
 
-//     constructor (titular, saldo) {
-//         this.titular = titular;
-//         this.saldo = saldo;
-//     }
 
-//     depositar(valor) {
-//         this.saldo += valor;
-//         console.log(`Valor de R$ ${valor} depositado! Saldo atualizado: R$ ${this.saldo}!`)
-//     }
+class ContaBancaria { 
 
-//     sacar (valor){
-//         if (valor > this.saldo) return console.log(`Saldo insuficiente! Seu saldo atual é de R$ ${this.saldo}`);
-//         this.saldo -= valor;
-//         console.log(`Valor de R$ ${valor} sacado! Seu saldo atualizado: R$ ${this.saldo}!`)
-//     }
+    constructor (titular, saldo) {
+        this.titular = titular;
+        this[_saldo] = saldo;
+    }
 
-//     exibirSaldo() {
-//        console.log(`Seu saldo é R$ ${this.saldo}` )
-//     }
-// }   
+    get saldo() {
+        console.log('Get')
+        return this[_saldo]
 
-// const conta1 = new ContaBancaria('Cezar', 100);
-// console.log(conta1);
-// conta1.sacar(500);
+    }
+
+    set saldo (valor) {
+        console.log('Setter')
+        if (valor < 0 ) return console.log('Valor inválido!')
+        else {this[_saldo] = valor;}    
+
+    }
+
+    depositar(valor) {
+        this[_saldo] += valor;
+        console.log(`Valor de R$ ${valor} depositado! Saldo atualizado: R$ ${this[_saldo]}!`)
+    }
+
+    sacar (valor){
+        if (valor > this[_saldo]) return console.log(`Saldo insuficiente! Seu saldo atual é de R$ ${this[_saldo]}`);
+        this[_saldo] -= valor;
+        console.log(`Valor de R$ ${valor} sacado! Seu saldo atualizado: R$ ${this[_saldo]}!`)
+    }
+
+    exibirSaldo() {
+       console.log(`Seu saldo é R$ ${this[_saldo]}` )
+    }
+}   
+
+const conta1 = new ContaBancaria('Cezar', 100);
+conta1.modificaSaldo = -500
+console.log(conta1.saldo)
 
 // 4. Herdando Classes
 // Crie uma classe Animal com:
