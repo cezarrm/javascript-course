@@ -14,6 +14,9 @@ class Carro {
         this[_velocidade] = 0; //troca velocidade por [] e usa "nome dinâmico";
     }
 
+g
+
+
     set velocidade(valor) { //criei um getter e um setter para a velocidade que é privada
         console.log('SETTER')
         if(typeof valor !== 'number') return;
