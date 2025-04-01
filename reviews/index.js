@@ -99,51 +99,38 @@
 // Crie uma função chamada getDataWithXHR(url), que usa XMLHttpRequest e retorna uma Promise.
 
 
-function getDataWithXHR(url) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', url, true);
+// function getDataWithXHR(url) {
+//     return new Promise((resolve, reject) => {
+//       const xhr = new XMLHttpRequest();
+//       xhr.open('GET', url, true);
   
-      xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          resolve(JSON.parse(xhr.responseText)); // Convertendo a resposta em JSON
-        } else {
-          reject(new Error('Erro de requisição: ' + xhr.status));
-        }
-      };
+//       xhr.onload = function () {
+//         if (xhr.status >= 200 && xhr.status < 300) {
+//           resolve(JSON.parse(xhr.responseText)); // Convertendo a resposta em JSON
+//         } else {
+//           reject(new Error('Erro de requisição: ' + xhr.status));
+//         }
+//       };
   
-      xhr.onerror = function () {
-        reject(new Error('Erro de requisição!'));
-      };
+//       xhr.onerror = function () {
+//         reject(new Error('Erro de requisição!'));
+//       };
   
-      xhr.send();
-    });
-  }
+//       xhr.send();
+//     });
+//   }
   
-  getDataWithXHR('https://jsonplaceholder.typicode.com/posts/1')
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+//   getDataWithXHR('https://jsonplaceholder.typicode.com/posts/1')
+//     .then(data => console.log(data))
+//     .catch(error => console.log(error));
 
 
+// Exercício 1: Requisição GET com Fetch API
+// Crie uma página HTML com um botão que, ao ser clicado, faz uma requisição GET para a API pública JSONPlaceholder e exibe o título e o corpo do post na tela.
 
-// A função deve realizar uma requisição GET para a URL recebida como parâmetro.
+// Passos:
+// Use fetch para buscar os dados.
 
-// Se a requisição for bem-sucedida, a Promise deve ser resolvida com a resposta.
+// Converta a resposta para JSON.
 
-// Se houver erro, a Promise deve ser rejeitada.
-
-// Teste chamando getDataWithXHR("https://jsonplaceholder.typicode.com/posts/1") e imprimindo o resultado no console.
-
-// 5. Fetch API (GET)
-// Utilize a Fetch API para buscar dados da URL https://jsonplaceholder.typicode.com/users/1 e exibir o nome do usuário no console.
-
-// Agora, reescreva a requisição utilizando async/await.
-
-// 6. Fetch API e Axios (JSON)
-// Faça uma requisição GET para https://jsonplaceholder.typicode.com/todos/1 utilizando fetch.
-
-// Agora, faça a mesma requisição usando axios.get().
-
-// Compare os resultados e explique as diferenças entre fetch e axios.
-
-// Esses exercícios vão ajudar você a dominar Promises, async/await, XMLHttpRequest, Fetch API e Axios! Quer que eu explique algum deles com mais detalhes? 🚀
+// Exiba os dados na tela.
